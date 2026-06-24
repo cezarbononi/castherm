@@ -117,13 +117,13 @@ Edite os respectivos arquivos em `src/data/`.
 ## Roadmap de fases
 
 - ✅ **Fase 1** — Estrutura do projeto
-- ⬜ **Fase 2** — Identidade visual e componentes base
-- ⬜ **Fase 3** — Landing page completa
-- ⬜ **Fase 4** — Organização dos PDFs (inventário)
-- ⬜ **Fase 5** — Extração estruturada dos produtos dos PDFs
-- ⬜ **Fase 6** — Criação do catálogo navegável
-- ⬜ **Fase 7** — Integração dos produtos reais no site
-- ⬜ **Fase 8** — SEO, acessibilidade, responsividade e publicação
+- ✅ **Fase 2** — Identidade visual e componentes base
+- ✅ **Fase 3** — Landing page completa
+- ✅ **Fase 4** — Organização dos PDFs (inventário)
+- ✅ **Fase 5** — Extração estruturada dos produtos dos PDFs
+- ✅ **Fase 6** — Criação do catálogo navegável
+- ✅ **Fase 7** — Integração dos produtos reais no site
+- ✅ **Fase 8** — SEO, acessibilidade, responsividade e publicação
 
 ## Placeholders importantes (revisar antes de publicar)
 
