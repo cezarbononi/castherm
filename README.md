@@ -125,15 +125,4 @@ Edite os respectivos arquivos em `src/data/`.
 - ✅ **Fase 7** — Integração dos produtos reais no site
 - ✅ **Fase 8** — SEO, acessibilidade, responsividade e publicação
 
-## Placeholders importantes (revisar antes de publicar)
-
-Os campos abaixo estão com valores temporários em `src/data/company.ts` e devem ser substituídos:
-
-- `whatsapp.number` → número real do WhatsApp (formato `5511999999999`)
-- `whatsapp.display` → versão formatada `(XX) XXXXX-XXXX`
-- `address.full` → endereço completo
-- `social` → links das redes sociais (se houver)
-
----
-
-© Cas Therm — Todos os direitos reservados.
+Cezar Bononi
