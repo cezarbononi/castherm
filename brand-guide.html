@@ -1,0 +1,1529 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand Guide â€” Cas Therm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* =========================================================
+       RESET & BASE
+       ========================================================= */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --primary: #0f2a44;
+        --primary-600: #1f3f60;
+        --accent: #00b4d8;
+        --accent-600: #0098b8;
+        --success: #25d366;
+        --neutral-50: #f8fafc;
+        --neutral-100: #f1f5f9;
+        --neutral-200: #e2e8f0;
+        --neutral-300: #cbd5e1;
+        --neutral-400: #94a3b8;
+        --neutral-500: #64748b;
+        --neutral-600: #475569;
+        --neutral-700: #334155;
+        --neutral-800: #1e293b;
+        --neutral-900: #0f172a;
+        --dark-bg: #0a1428;
+        --font: 'Inter', system-ui, -apple-system, sans-serif;
+        --radius: 8px;
+        --radius-lg: 12px;
+      }
+
+      body {
+        font-family: var(--font);
+        background: var(--neutral-50);
+        color: var(--neutral-900);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* =========================================================
+       LAYOUT
+       ========================================================= */
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+
+      .page-header {
+        background: var(--primary);
+        color: white;
+        padding: 48px 0 40px;
+        margin-bottom: 0;
+      }
+      .page-header-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .page-header .eyebrow {
+        color: var(--accent);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .page-header h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        color: white;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+      }
+      .page-header p {
+        color: var(--neutral-300);
+        font-size: 1rem;
+        max-width: 620px;
+      }
+      .page-header .meta {
+        margin-top: 24px;
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .page-header .meta span {
+        font-size: 12px;
+        color: var(--neutral-400);
+      }
+      .page-header .meta strong {
+        color: var(--neutral-200);
+      }
+
+      /* SeÃ§Ãµes */
+      section {
+        margin-top: 56px;
+      }
+      section + section {
+        border-top: 1px solid var(--neutral-200);
+        padding-top: 56px;
+      }
+
+      h2.section-title {
+        font-size: 1.375rem;
+        font-weight: 700;
+        color: var(--primary);
+        letter-spacing: -0.01em;
+        margin-bottom: 6px;
+      }
+      .section-desc {
+        font-size: 0.9rem;
+        color: var(--neutral-500);
+        margin-bottom: 28px;
+        max-width: 680px;
+      }
+
+      h3.sub-title {
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--neutral-500);
+        margin: 28px 0 14px;
+      }
+
+      /* Cards / tokens */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .grid-6 {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+      }
+      @media (max-width: 720px) {
+        .grid-2,
+        .grid-3,
+        .grid-4,
+        .grid-6 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 480px) {
+        .grid-2,
+        .grid-3,
+        .grid-4,
+        .grid-6 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .card {
+        background: white;
+        border: 1px solid var(--neutral-200);
+        border-radius: var(--radius-lg);
+        padding: 20px;
+      }
+
+      /* =========================================================
+       CORES
+       ========================================================= */
+      .color-swatch {
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+      .color-swatch-preview {
+        height: 80px;
+        display: flex;
+        align-items: flex-end;
+        padding: 10px 12px;
+      }
+      .color-swatch-info {
+        background: white;
+        padding: 10px 12px;
+      }
+      .color-swatch-info .name {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--neutral-800);
+      }
+      .color-swatch-info .hex {
+        font-size: 11px;
+        color: var(--neutral-400);
+        font-family: monospace;
+      }
+      .color-swatch-info .usage {
+        font-size: 10px;
+        color: var(--neutral-500);
+        margin-top: 2px;
+      }
+
+      /* =========================================================
+       TIPOGRAFIA
+       ========================================================= */
+      .type-specimen {
+        background: white;
+        border: 1px solid var(--neutral-200);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+      }
+      .type-row {
+        display: flex;
+        align-items: baseline;
+        gap: 20px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--neutral-100);
+      }
+      .type-row:last-child {
+        border-bottom: none;
+      }
+      .type-meta {
+        min-width: 140px;
+        font-size: 11px;
+        color: var(--neutral-400);
+        font-family: monospace;
+      }
+
+      /* =========================================================
+       LOGO
+       ========================================================= */
+      .logo-showcase {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      @media (max-width: 600px) {
+        .logo-showcase {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .logo-box {
+        border-radius: var(--radius-lg);
+        padding: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--neutral-200);
+      }
+      .logo-box.light {
+        background: white;
+      }
+      .logo-box.dark {
+        background: var(--primary);
+      }
+      .logo-box.dark-2 {
+        background: var(--dark-bg);
+      }
+
+      .logo-text-light {
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .logo-text-light .cas {
+        color: var(--primary);
+      }
+      .logo-text-light .therm {
+        color: var(--accent);
+      }
+      .logo-text-light .dot {
+        width: 8px;
+        height: 8px;
+        background: var(--accent);
+        border-radius: 50%;
+      }
+      .logo-text-dark .cas {
+        color: white;
+      }
+      .logo-text-dark .therm {
+        color: var(--accent);
+      }
+
+      .logo-rule {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        margin-bottom: 12px;
+      }
+      .logo-rule .tag {
+        min-width: 44px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 11px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .tag-ok {
+        background: #dcfce7;
+        color: #16a34a;
+      }
+      .tag-no {
+        background: #fee2e2;
+        color: #dc2626;
+      }
+
+      /* =========================================================
+       BOTÃ•ES
+       ========================================================= */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: var(--radius);
+        font-weight: 600;
+        font-family: var(--font);
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 0.15s;
+        text-decoration: none;
+      }
+      .btn-sm {
+        height: 36px;
+        padding: 0 16px;
+        font-size: 13px;
+      }
+      .btn-md {
+        height: 44px;
+        padding: 0 20px;
+        font-size: 14px;
+      }
+      .btn-lg {
+        height: 52px;
+        padding: 0 28px;
+        font-size: 15px;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: white;
+      }
+      .btn-accent {
+        background: var(--accent);
+        color: white;
+      }
+      .btn-outline {
+        border-color: var(--primary);
+        color: var(--primary);
+        background: transparent;
+      }
+      .btn-ghost {
+        color: var(--primary);
+        background: transparent;
+      }
+      .btn-whatsapp {
+        background: var(--success);
+        color: white;
+      }
+
+      .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      /* =========================================================
+       ESPAÃ‡AMENTOS
+       ========================================================= */
+      .spacing-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--neutral-100);
+      }
+      .spacing-row:last-child {
+        border-bottom: none;
+      }
+      .spacing-bar {
+        background: var(--accent);
+        height: 20px;
+        border-radius: 3px;
+        opacity: 0.7;
+      }
+      .spacing-meta {
+        font-size: 12px;
+        color: var(--neutral-500);
+        font-family: monospace;
+        min-width: 200px;
+      }
+
+      /* =========================================================
+       DECISÃ•ES
+       ========================================================= */
+      .decision-card {
+        background: white;
+        border: 1px solid var(--neutral-200);
+        border-left: 4px solid var(--accent);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        padding: 16px 20px;
+        margin-bottom: 12px;
+      }
+      .decision-card .label {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        margin-bottom: 4px;
+      }
+      .decision-card .title {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 6px;
+      }
+      .decision-card .body {
+        font-size: 13px;
+        color: var(--neutral-600);
+        line-height: 1.6;
+      }
+
+      /* =========================================================
+       DARK MODE PREVIEW
+       ========================================================= */
+      .dm-preview {
+        background: var(--dark-bg);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        color: white;
+      }
+      .dm-card {
+        background: #1e3a5f;
+        border: 1px solid #1e3a5f;
+        border-radius: var(--radius);
+        padding: 16px;
+      }
+
+      /* =========================================================
+       MARCAS
+       ========================================================= */
+      .brand-pill {
+        background: white;
+        border: 1px solid var(--neutral-200);
+        border-radius: 999px;
+        padding: 8px 20px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--neutral-500);
+        letter-spacing: 0.05em;
+      }
+      .brands-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      /* =========================================================
+       MISC
+       ========================================================= */
+      .tag-chip {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(0, 180, 216, 0.1);
+        color: var(--accent);
+        border-radius: 999px;
+        padding: 3px 12px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .note {
+        background: #fffbeb;
+        border: 1px solid #fde68a;
+        border-radius: var(--radius);
+        padding: 12px 16px;
+        font-size: 13px;
+        color: #92400e;
+        margin-top: 16px;
+      }
+      .note strong {
+        color: #78350f;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+      th {
+        background: var(--neutral-100);
+        text-align: left;
+        padding: 10px 14px;
+        font-weight: 700;
+        color: var(--neutral-700);
+        border-bottom: 2px solid var(--neutral-200);
+      }
+      td {
+        padding: 10px 14px;
+        border-bottom: 1px solid var(--neutral-100);
+        color: var(--neutral-700);
+        vertical-align: top;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+      .pill {
+        display: inline-block;
+        background: var(--neutral-100);
+        border-radius: 999px;
+        padding: 2px 10px;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--neutral-600);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <div class="page-header">
+      <div class="page-header-inner">
+        <p class="eyebrow">Cas Therm Â· Guia de Identidade Visual</p>
+        <h1>Brand Guide</h1>
+        <p>
+          Documento de referÃªncia para uso consistente da marca Cas Therm em todos os pontos de
+          contato digitais. Criado para orientar o desenvolvimento do site e futuros materiais de
+          comunicaÃ§Ã£o.
+        </p>
+        <div class="meta">
+          <span><strong>VersÃ£o</strong> 1.0 â€” Fase 2.5</span>
+          <span><strong>Ãšltima atualizaÃ§Ã£o</strong> Maio 2026</span>
+          <span><strong>Formato</strong> HTML standalone (abre direto no navegador)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <!-- ===== 1. CORES ===== -->
+      <section>
+        <h2 class="section-title">1. Paleta de Cores</h2>
+        <p class="section-desc">
+          Paleta industrial e tÃ©cnica, projetada para transmitir credibilidade, precisÃ£o e
+          modernidade no segmento B2B de instrumentaÃ§Ã£o.
+        </p>
+
+        <h3 class="sub-title">Cores Institucionais</h3>
+        <div class="grid-3">
+          <div class="color-swatch">
+            <div class="color-swatch-preview" style="background: #0f2a44">
+              <span
+                style="
+                  color: rgba(255, 255, 255, 0.4);
+                  font-size: 10px;
+                  font-weight: 700;
+                  font-family: monospace;
+                "
+                >PRIMARY</span
+              >
+            </div>
+            <div class="color-swatch-info">
+              <div class="name">Primary â€” Azul PetrÃ³leo</div>
+              <div class="hex">#0F2A44</div>
+              <div class="usage">
+                Headers, textos principais, botÃ£o primÃ¡rio, background escuro
+              </div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-preview" style="background: #00b4d8">
+              <span
+                style="
+                  color: rgba(255, 255, 255, 0.5);
+                  font-size: 10px;
+                  font-weight: 700;
+                  font-family: monospace;
+                "
+                >ACCENT</span
+              >
+            </div>
+            <div class="color-swatch-info">
+              <div class="name">Accent â€” Ciano TÃ©cnico</div>
+              <div class="hex">#00B4D8</div>
+              <div class="usage">CTAs secundÃ¡rios, eyebrows, Ã­cones em hover, destaques</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-preview" style="background: #25d366">
+              <span
+                style="
+                  color: rgba(255, 255, 255, 0.5);
+                  font-size: 10px;
+                  font-weight: 700;
+                  font-family: monospace;
+                "
+                >SUCCESS</span
+              >
+            </div>
+            <div class="color-swatch-info">
+              <div class="name">Success â€” Verde WhatsApp</div>
+              <div class="hex">#25D366</div>
+              <div class="usage">BotÃ£o de orÃ§amento WhatsApp exclusivamente</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Escala de Neutros (Fundo e Texto)</h3>
+        <div class="grid-6">
+          <div class="color-swatch">
+            <div
+              class="color-swatch-preview"
+              style="background: #f8fafc; border-bottom: 1px solid #e2e8f0"
+            ></div>
+            <div class="color-swatch-info">
+              <div class="name">Neutral 50</div>
+              <div class="hex">#F8FAFC</div>
+              <div class="usage">Fundo do site (light)</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div
+              class="color-swatch-preview"
+              style="background: #f1f5f9; border-bottom: 1px solid #e2e8f0"
+            ></div>
+            <div class="color-swatch-info">
+              <div class="name">Neutral 100</div>
+              <div class="hex">#F1F5F9</div>
+              <div class="usage">SeÃ§Ãµes alternadas "muted"</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-preview" style="background: #cbd5e1"></div>
+            <div class="color-swatch-info">
+              <div class="name">Neutral 300</div>
+              <div class="hex">#CBD5E1</div>
+              <div class="usage">Bordas, separadores</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-preview" style="background: #64748b"></div>
+            <div class="color-swatch-info">
+              <div class="name">Neutral 500</div>
+              <div class="hex">#64748B</div>
+              <div class="usage">Textos secundÃ¡rios</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-preview" style="background: #1e293b"></div>
+            <div class="color-swatch-info">
+              <div class="name">Neutral 800</div>
+              <div class="hex">#1E293B</div>
+              <div class="usage">Texto em fundos escuros</div>
+            </div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-swatch-preview" style="background: #0a1428"></div>
+            <div class="color-swatch-info">
+              <div class="name">Dark BG</div>
+              <div class="hex">#0A1428</div>
+              <div class="usage">Fundo do site (dark mode)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="note" style="margin-top: 20px">
+          <strong>Regra de acessibilidade:</strong> Todo texto sobre fundo colorido deve manter
+          contraste mÃ­nimo de 4.5:1 (WCAG AA). Branco sobre Primary (#0F2A44) = contraste 12.6:1
+          âœ“. Branco sobre Accent (#00B4D8) = contraste 3.0:1 â€” usar apenas para texto grande
+          (+18px) ou Ã­cones.
+        </div>
+      </section>
+
+      <!-- ===== 2. TIPOGRAFIA ===== -->
+      <section>
+        <h2 class="section-title">2. Tipografia</h2>
+        <p class="section-desc">
+          Fonte Ãºnica: <strong>Inter</strong> â€” sans-serif tÃ©cnica e altamente legÃ­vel, usada
+          amplamente em produtos B2B e SaaS. Carregada via Google Fonts com subset latin.
+        </p>
+
+        <div class="type-specimen">
+          <div class="type-row">
+            <div class="type-meta">H1 Â· 36px Â· 800<br />letter-spacing: -.02em</div>
+            <div
+              style="
+                font-size: 36px;
+                font-weight: 800;
+                color: #0f2a44;
+                letter-spacing: -0.02em;
+                line-height: 1.1;
+              "
+            >
+              Instrumentos de MediÃ§Ã£o
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">H2 Â· 30px Â· 700<br />letter-spacing: -.015em</div>
+            <div
+              style="
+                font-size: 30px;
+                font-weight: 700;
+                color: #0f2a44;
+                letter-spacing: -0.015em;
+                line-height: 1.2;
+              "
+            >
+              Instrumentos de PressÃ£o
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">H3 Â· 20px Â· 700<br />letter-spacing: -.01em</div>
+            <div style="font-size: 20px; font-weight: 700; color: #0f2a44; letter-spacing: -0.01em">
+              ManÃ´metro Diferencial Magnehelic
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">Body Â· 16px Â· 400<br />line-height: 1.625</div>
+            <div
+              style="
+                font-size: 16px;
+                font-weight: 400;
+                color: #475569;
+                line-height: 1.625;
+                max-width: 540px;
+              "
+            >
+              A Cas Therm atua com revenda de instrumentos de precisÃ£o para indÃºstria,
+              laboratÃ³rio e seguranÃ§a do trabalho. Atendemos com consultoria tÃ©cnica
+              especializada para escolha do instrumento correto.
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">Small Â· 14px Â· 400<br />color: neutral-500</div>
+            <div style="font-size: 14px; font-weight: 400; color: #64748b">
+              Marca: VICAL Â· Modelo: VTS-160 Â· Faixa: 0â€“300Â°C
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">Eyebrow Â· 11px Â· 700<br />uppercase Â· tracking: .18em</div>
+            <div
+              style="
+                font-size: 11px;
+                font-weight: 700;
+                color: #00b4d8;
+                text-transform: uppercase;
+                letter-spacing: 0.18em;
+              "
+            >
+              Instrumentos de PressÃ£o
+            </div>
+          </div>
+          <div class="type-row">
+            <div class="type-meta">Label Â· 11px Â· 700<br />uppercase Â· tracking: .1em</div>
+            <div
+              style="
+                font-size: 11px;
+                font-weight: 700;
+                color: #64748b;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+              "
+            >
+              SeguranÃ§a do Trabalho
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 3. LOGO ===== -->
+      <section>
+        <h2 class="section-title">3. Logo</h2>
+        <p class="section-desc">
+          A Cas Therm possui uma logo oficial em PNG. O grupo Cas Ã© composto por duas empresas,
+          cada uma com sua logo.
+        </p>
+
+        <h3 class="sub-title">Logo Principal â€” Cas Therm</h3>
+        <div class="logo-showcase">
+          <div>
+            <div class="logo-box light" style="flex-direction: column; gap: 8px">
+              <img
+                src="public/images/logo/castherm.png"
+                alt="Cas Therm"
+                style="max-width: 160px; max-height: 50px; object-fit: contain"
+                onerror="this.replaceWith(makeLogo('light'))"
+              />
+              <span style="font-size: 11px; color: #94a3b8">Fundo claro â€” Header</span>
+            </div>
+            <p style="font-size: 12px; color: #64748b; margin-top: 8px">
+              Uso: header do site, materiais claros
+            </p>
+          </div>
+          <div>
+            <div class="logo-box dark" style="flex-direction: column; gap: 8px">
+              <img
+                src="public/images/logo/castherm.png"
+                alt="Cas Therm"
+                style="
+                  max-width: 160px;
+                  max-height: 50px;
+                  object-fit: contain;
+                  filter: brightness(0) invert(1);
+                "
+                onerror="this.style.display = 'none'"
+              />
+              <span style="font-size: 11px; color: #4a6fa5">Fundo escuro â€” Footer</span>
+            </div>
+            <p style="font-size: 12px; color: #64748b; margin-top: 8px">
+              Uso: footer, seÃ§Ãµes escuras, dark mode<br /><code
+                style="font-size: 11px; background: #f1f5f9; padding: 2px 6px; border-radius: 4px"
+                >filter: brightness(0) invert(1)</code
+              >
+            </p>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Logo Cas Service (empresa irmÃ£)</h3>
+        <div class="logo-showcase" style="grid-template-columns: 1fr 1fr 1fr">
+          <div>
+            <div class="logo-box light" style="flex-direction: column; gap: 8px">
+              <img
+                src="public/images/logo/cas-service.png"
+                alt="Cas Service"
+                style="max-width: 120px; max-height: 40px; object-fit: contain"
+                onerror="this.style.display = 'none'"
+              />
+              <span style="font-size: 11px; color: #94a3b8">Cas Service</span>
+            </div>
+            <p style="font-size: 12px; color: #64748b; margin-top: 8px">
+              Uso: footer (seÃ§Ã£o Grupo Cas)
+            </p>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Regras de Uso</h3>
+        <div class="logo-rule">
+          <span class="tag tag-ok">OK</span>
+          <span style="font-size: 13px; color: #374151"
+            >Usar a logo original PNG sem alteraÃ§Ãµes de cor, proporÃ§Ã£o ou rotaÃ§Ã£o</span
+          >
+        </div>
+        <div class="logo-rule">
+          <span class="tag tag-ok">OK</span>
+          <span style="font-size: 13px; color: #374151"
+            >Em fundos escuros, aplicar
+            <code style="background: #f1f5f9; padding: 1px 5px; border-radius: 3px; font-size: 12px"
+              >filter: brightness(0) invert(1)</code
+            >
+            para versÃ£o branca</span
+          >
+        </div>
+        <div class="logo-rule">
+          <span class="tag tag-ok">OK</span>
+          <span style="font-size: 13px; color: #374151"
+            >Tamanhos: sm (100Ã—30px), md (140Ã—42px), lg (180Ã—54px)</span
+          >
+        </div>
+        <div class="logo-rule">
+          <span class="tag tag-no">NÃƒO</span>
+          <span style="font-size: 13px; color: #374151"
+            >Alterar as cores individualmente, esticar, comprimir ou adicionar sombras</span
+          >
+        </div>
+        <div class="logo-rule">
+          <span class="tag tag-no">NÃƒO</span>
+          <span style="font-size: 13px; color: #374151"
+            >Colocar sobre fundos com baixo contraste ou imagens poluÃ­das</span
+          >
+        </div>
+        <div class="logo-rule">
+          <span class="tag tag-no">NÃƒO</span>
+          <span style="font-size: 13px; color: #374151"
+            >Usar a logo da Cas Service no lugar da Cas Therm (sÃ£o entidades distintas)</span
+          >
+        </div>
+      </section>
+
+      <!-- ===== 4. BOTÃ•ES ===== -->
+      <section>
+        <h2 class="section-title">4. Componentes â€” BotÃµes</h2>
+        <p class="section-desc">
+          5 variantes, 3 tamanhos. O botÃ£o WhatsApp Ã© reservado exclusivamente para CTAs de
+          orÃ§amento â€” nunca usar para outras aÃ§Ãµes.
+        </p>
+
+        <h3 class="sub-title">Variantes</h3>
+        <div class="btn-group">
+          <button class="btn btn-md btn-primary">Primary</button>
+          <button class="btn btn-md btn-accent">Accent</button>
+          <button class="btn btn-md btn-outline">Outline</button>
+          <button class="btn btn-md btn-ghost">Ghost</button>
+          <button class="btn btn-md btn-whatsapp">WhatsApp</button>
+        </div>
+
+        <h3 class="sub-title">Tamanhos</h3>
+        <div class="btn-group">
+          <button class="btn btn-sm btn-primary">Pequeno (sm)</button>
+          <button class="btn btn-md btn-primary">MÃ©dio (md) â€” padrÃ£o</button>
+          <button class="btn btn-lg btn-primary">Grande (lg)</button>
+        </div>
+
+        <table style="margin-top: 8px">
+          <thead>
+            <tr>
+              <th>Variante</th>
+              <th>Uso Principal</th>
+              <th>NÃ£o usar para</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Primary</strong></td>
+              <td>CTA principal da pÃ¡gina (Ex: "Solicitar orÃ§amento")</td>
+              <td>AÃ§Ãµes destrutivas, cancelar</td>
+            </tr>
+            <tr>
+              <td><strong>Accent</strong></td>
+              <td>CTA alternativo com mais destaque visual, fundos escuros</td>
+              <td>Uso excessivo â€” mÃ¡x. 2 por seÃ§Ã£o</td>
+            </tr>
+            <tr>
+              <td><strong>Outline</strong></td>
+              <td>AÃ§Ãµes secundÃ¡rias ao lado de um botÃ£o primary</td>
+              <td>AÃ§Ã£o principal isolada</td>
+            </tr>
+            <tr>
+              <td><strong>Ghost</strong></td>
+              <td>Links discretos, navegaÃ§Ã£o, "ver mais"</td>
+              <td>CTAs de conversÃ£o</td>
+            </tr>
+            <tr>
+              <td><strong>WhatsApp</strong></td>
+              <td>SolicitaÃ§Ã£o de orÃ§amento via WhatsApp</td>
+              <td>Qualquer outra finalidade</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== 5. ESPAÃ‡AMENTO ===== -->
+      <section>
+        <h2 class="section-title">5. EspaÃ§amento e Grid</h2>
+        <p class="section-desc">
+          Sistema baseado em mÃºltiplos de 4px (escala Tailwind). Container mÃ¡ximo: 1200px com
+          padding lateral de 24px em mobile e 48px em desktop.
+        </p>
+
+        <h3 class="sub-title">Escala de EspaÃ§os</h3>
+        <div class="card" style="background: white">
+          <div class="spacing-row">
+            <div class="spacing-meta">4px â€” Tailwind: p-1</div>
+            <div class="spacing-bar" style="width: 4px"></div>
+            <div style="font-size: 12px; color: #94a3b8">
+              Gaps internos mÃ­nimos (Ã­cone + texto)
+            </div>
+          </div>
+          <div class="spacing-row">
+            <div class="spacing-meta">8px â€” Tailwind: p-2</div>
+            <div class="spacing-bar" style="width: 8px"></div>
+            <div style="font-size: 12px; color: #94a3b8">
+              Padding de badges, separaÃ§Ã£o de tags
+            </div>
+          </div>
+          <div class="spacing-row">
+            <div class="spacing-meta">16px â€” Tailwind: p-4</div>
+            <div class="spacing-bar" style="width: 16px"></div>
+            <div style="font-size: 12px; color: #94a3b8">Gap entre cards no grid</div>
+          </div>
+          <div class="spacing-row">
+            <div class="spacing-meta">24px â€” Tailwind: p-6</div>
+            <div class="spacing-bar" style="width: 24px"></div>
+            <div style="font-size: 12px; color: #94a3b8">Padding interno dos cards</div>
+          </div>
+          <div class="spacing-row">
+            <div class="spacing-meta">48px â€” Tailwind: py-12</div>
+            <div class="spacing-bar" style="width: 48px"></div>
+            <div style="font-size: 12px; color: #94a3b8">Padding vertical seÃ§Ãµes "sm"</div>
+          </div>
+          <div class="spacing-row">
+            <div class="spacing-meta">64px â€” Tailwind: py-16</div>
+            <div class="spacing-bar" style="width: 64px"></div>
+            <div style="font-size: 12px; color: #94a3b8">Padding vertical seÃ§Ãµes padrÃ£o</div>
+          </div>
+          <div class="spacing-row">
+            <div class="spacing-meta">96px â€” Tailwind: py-24</div>
+            <div class="spacing-bar" style="width: 96px"></div>
+            <div style="font-size: 12px; color: #94a3b8">Padding vertical seÃ§Ãµes "lg" (hero)</div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Border Radius</h3>
+        <div class="grid-4" style="margin-top: 8px">
+          <div
+            style="
+              background: white;
+              border: 1px solid #e2e8f0;
+              border-radius: 4px;
+              padding: 16px;
+              text-align: center;
+            "
+          >
+            <div style="font-size: 12px; font-weight: 700; color: #0f2a44">sm â€” 4px</div>
+            <div style="font-size: 11px; color: #64748b">Badges, chips pequenos</div>
+          </div>
+          <div
+            style="
+              background: white;
+              border: 1px solid #e2e8f0;
+              border-radius: 8px;
+              padding: 16px;
+              text-align: center;
+            "
+          >
+            <div style="font-size: 12px; font-weight: 700; color: #0f2a44">md â€” 8px</div>
+            <div style="font-size: 11px; color: #64748b">BotÃµes, inputs</div>
+          </div>
+          <div
+            style="
+              background: white;
+              border: 1px solid #e2e8f0;
+              border-radius: 12px;
+              padding: 16px;
+              text-align: center;
+            "
+          >
+            <div style="font-size: 12px; font-weight: 700; color: #0f2a44">lg â€” 12px</div>
+            <div style="font-size: 11px; color: #64748b">Cards de categoria/produto</div>
+          </div>
+          <div
+            style="
+              background: white;
+              border: 1px solid #e2e8f0;
+              border-radius: 16px;
+              padding: 16px;
+              text-align: center;
+            "
+          >
+            <div style="font-size: 12px; font-weight: 700; color: #0f2a44">xl â€” 16px</div>
+            <div style="font-size: 11px; color: #64748b">SeÃ§Ãµes hero, modais</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 6. DARK MODE ===== -->
+      <section>
+        <h2 class="section-title">6. Dark Mode</h2>
+        <p class="section-desc">
+          Implementado via classe
+          <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px"
+            >dark</code
+          >
+          no elemento html (Tailwind darkMode: 'class'). Toggle persiste via localStorage. Respeita
+          <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px"
+            >prefers-color-scheme</code
+          >
+          na primeira visita.
+        </p>
+
+        <div class="dm-preview">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-bottom: 20px;
+            "
+          >
+            <div>
+              <div
+                style="
+                  font-size: 11px;
+                  font-weight: 700;
+                  letter-spacing: 0.18em;
+                  text-transform: uppercase;
+                  color: #00b4d8;
+                  margin-bottom: 4px;
+                "
+              >
+                Dark Mode Preview
+              </div>
+              <div style="font-size: 20px; font-weight: 700; color: #f1f5f9">
+                Instrumentos de MediÃ§Ã£o
+              </div>
+              <div style="font-size: 14px; color: #94a3b8; margin-top: 4px">
+                Revenda consultiva multi-marca
+              </div>
+            </div>
+            <button
+              style="
+                background: #1e3a5f;
+                border: 1px solid #2d5277;
+                color: #94a3b8;
+                padding: 8px 12px;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 13px;
+                font-family: inherit;
+              "
+            >
+              ðŸŒ™ Dark
+            </button>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px">
+            <div class="dm-card">
+              <div
+                style="
+                  font-size: 11px;
+                  font-weight: 700;
+                  text-transform: uppercase;
+                  letter-spacing: 0.1em;
+                  color: #4a8fb5;
+                  margin-bottom: 8px;
+                "
+              >
+                AnemÃ´metros
+              </div>
+              <div style="font-size: 14px; font-weight: 700; color: #f1f5f9; margin-bottom: 4px">
+                Kestrel 3000
+              </div>
+              <div style="font-size: 12px; color: #64748b">
+                MediÃ§Ã£o portÃ¡til de velocidade do ar
+              </div>
+            </div>
+            <div class="dm-card">
+              <div
+                style="
+                  font-size: 11px;
+                  font-weight: 700;
+                  text-transform: uppercase;
+                  letter-spacing: 0.1em;
+                  color: #4a8fb5;
+                  margin-bottom: 8px;
+                "
+              >
+                PressÃ£o
+              </div>
+              <div style="font-size: 14px; font-weight: 700; color: #f1f5f9; margin-bottom: 4px">
+                Magnehelic 2000
+              </div>
+              <div style="font-size: 12px; color: #64748b">ManÃ´metro diferencial para HVAC</div>
+            </div>
+            <div class="dm-card">
+              <div
+                style="
+                  font-size: 11px;
+                  font-weight: 700;
+                  text-transform: uppercase;
+                  letter-spacing: 0.1em;
+                  color: #4a8fb5;
+                  margin-bottom: 8px;
+                "
+              >
+                Temperatura
+              </div>
+              <div style="font-size: 14px; font-weight: 700; color: #f1f5f9; margin-bottom: 4px">
+                TermÃ´metro VTS
+              </div>
+              <div style="font-size: 12px; color: #64748b">BimetÃ¡lico 0â€“300Â°C, haste 200mm</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Mapeamento de Cores Light â†’ Dark</h3>
+        <table style="margin-top: 8px">
+          <thead>
+            <tr>
+              <th>Elemento</th>
+              <th>Light Mode</th>
+              <th>Dark Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Fundo do site</td>
+              <td>#F8FAFC (neutral-50)</td>
+              <td>#0A1428 (dark-bg)</td>
+            </tr>
+            <tr>
+              <td>Fundo de cards</td>
+              <td>#FFFFFF (white)</td>
+              <td>#1E293B (neutral-800)</td>
+            </tr>
+            <tr>
+              <td>SeÃ§Ã£o "muted"</td>
+              <td>#F1F5F9 (neutral-100)</td>
+              <td>neutral-800/60</td>
+            </tr>
+            <tr>
+              <td>TÃ­tulos (H1â€“H3)</td>
+              <td>#0F2A44 (primary)</td>
+              <td>#F1F5F9 (neutral-100)</td>
+            </tr>
+            <tr>
+              <td>Texto secundÃ¡rio</td>
+              <td>#64748B (neutral-500)</td>
+              <td>#94A3B8 (neutral-400)</td>
+            </tr>
+            <tr>
+              <td>Bordas</td>
+              <td>#E2E8F0 (neutral-200)</td>
+              <td>#334155 (neutral-700)</td>
+            </tr>
+            <tr>
+              <td>Ãcones de card</td>
+              <td>primary/5 bg + primary text</td>
+              <td>accent/10 bg + accent text</td>
+            </tr>
+            <tr>
+              <td>BotÃ£o outline</td>
+              <td>border: primary, text: primary</td>
+              <td>border: accent, text: accent</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== 7. MARCAS ===== -->
+      <section>
+        <h2 class="section-title">7. Marcas Parceiras</h2>
+        <p class="section-desc">
+          A Cas Therm atua como revenda consultiva multi-marca. As marcas dos fabricantes devem ser
+          exibidas para transmitir credibilidade e transparÃªncia ao comprador B2B.
+        </p>
+
+        <h3 class="sub-title">Fabricantes Identificados no CatÃ¡logo</h3>
+        <div class="brands-row" style="margin-bottom: 20px">
+          <span class="brand-pill">VICAL</span>
+          <span class="brand-pill">KESTREL</span>
+          <span class="brand-pill">ITOWA</span>
+          <span class="brand-pill">FLUKE</span>
+          <span class="brand-pill">DWYER (Magnehelic)</span>
+          <span class="brand-pill">WINDSONIC</span>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Marca</th>
+              <th>Linha de Produtos</th>
+              <th>ObservaÃ§Ã£o</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>VICAL</strong></td>
+              <td>TermÃ´metros bimetÃ¡licos (sÃ©rie VTS)</td>
+              <td>Fabricante nacional com boa disponibilidade</td>
+            </tr>
+            <tr>
+              <td><strong>KESTREL</strong></td>
+              <td>AnemÃ´metros portÃ¡teis (1000, 3000)</td>
+              <td>Marca premium americana para SST</td>
+            </tr>
+            <tr>
+              <td><strong>ITOWA</strong></td>
+              <td>AnemÃ´metros eletrÃ´nicos</td>
+              <td>â€”</td>
+            </tr>
+            <tr>
+              <td><strong>FLUKE</strong></td>
+              <td>Bombas de calibraÃ§Ã£o hidrÃ¡ulica</td>
+              <td>Marca de alta precisÃ£o, muito reconhecida</td>
+            </tr>
+            <tr>
+              <td><strong>DWYER (Magnehelic)</strong></td>
+              <td>ManÃ´metros diferenciais (sÃ©rie 2000)</td>
+              <td>ClÃ¡ssico para HVAC e exaustÃ£o</td>
+            </tr>
+            <tr>
+              <td><strong>WINDSONIC</strong></td>
+              <td>AnemÃ´metros sÃ´nicos SDI-12</td>
+              <td>Linha profissional para estaÃ§Ãµes meteorolÃ³gicas</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="note">
+          <strong>Uso no site:</strong> Exibir logos das marcas (em escala de cinza no modo de
+          repouso, coloridas no hover) em uma faixa horizontal "Trabalhamos com as melhores marcas"
+          na landing page. Os logos dos fabricantes devem ser salvos em
+          <code>/public/images/brands/</code>.
+        </div>
+      </section>
+
+      <!-- ===== 8. ESTRUTURA DO CATÃLOGO ===== -->
+      <section>
+        <h2 class="section-title">8. Estrutura do CatÃ¡logo</h2>
+        <p class="section-desc">
+          Hierarquia real dos produtos conforme anÃ¡lise dos PDFs. 3 categorias principais, 11
+          subcategorias, ~48 modelos.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px">
+              <div
+                style="
+                  background: #0f2a44;
+                  color: white;
+                  border-radius: 6px;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                "
+              >
+                âŠ™
+              </div>
+              <strong style="color: #0f2a44">Instrumentos de PressÃ£o</strong>
+            </div>
+            <ul
+              style="
+                font-size: 12px;
+                color: #64748b;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+              "
+            >
+              <li>â€¢ ManÃ´metro Capsular</li>
+              <li>â€¢ ManÃ´metro PetroquÃ­mico</li>
+              <li>â€¢ ManÃ´metro Diferencial</li>
+              <li>â€¢ ManÃ´metro PadrÃ£o (Lab.)</li>
+              <li>â€¢ Pressostato</li>
+              <li>â€¢ Transmissor de PressÃ£o</li>
+              <li>â€¢ Bomba de CalibraÃ§Ã£o</li>
+              <li>â€¢ Medidor de Contato ElÃ©trico</li>
+            </ul>
+            <div style="margin-top: 12px"><span class="pill">8 subcategorias</span></div>
+          </div>
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px">
+              <div
+                style="
+                  background: #0f2a44;
+                  color: white;
+                  border-radius: 6px;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                "
+              >
+                ðŸŒ¡
+              </div>
+              <strong style="color: #0f2a44">TermÃ´metros BimetÃ¡licos</strong>
+            </div>
+            <p style="font-size: 12px; color: #64748b">
+              Linha VICAL â€” sÃ©rie VTS. VariaÃ§Ãµes por diÃ¢metro (100/160/200mm), conexÃ£o
+              (NPT/BSP/Liso), faixa (â€“30 a +500Â°C) e comprimento de haste (50â€“700mm).
+            </p>
+            <div style="margin-top: 12px"><span class="pill">Sem subcategorias</span></div>
+          </div>
+          <div class="card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px">
+              <div
+                style="
+                  background: #0f2a44;
+                  color: white;
+                  border-radius: 6px;
+                  width: 28px;
+                  height: 28px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                "
+              >
+                ðŸ›¡
+              </div>
+              <strong style="color: #0f2a44">SeguranÃ§a do Trabalho</strong>
+            </div>
+            <ul
+              style="
+                font-size: 12px;
+                color: #64748b;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+              "
+            >
+              <li>â€¢ AnemÃ´metros</li>
+              <li>â€¢ DecibelÃ­metros</li>
+              <li>â€¢ LuxÃ­metros</li>
+            </ul>
+            <p style="font-size: 12px; color: #94a3b8; margin-top: 8px">
+              Guarda-chuva para instrumentos de mediÃ§Ã£o ambiental ocupacional (SST/NRs).
+            </p>
+            <div style="margin-top: 12px"><span class="pill">3 subcategorias</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 9. DECISÃ•ES DE DESIGN ===== -->
+      <section>
+        <h2 class="section-title">9. DecisÃµes de Design Registradas</h2>
+        <p class="section-desc">
+          DecisÃµes tomadas ao longo do projeto para referÃªncia futura e onboarding de novos
+          colaboradores.
+        </p>
+
+        <div class="decision-card">
+          <div class="label">Hero</div>
+          <div class="title">
+            Hero estÃ¡tico com imagem industrial Ã  direita, sem carrossel automÃ¡tico
+          </div>
+          <div class="body">
+            CarrossÃ©is automÃ¡ticos prejudicam performance, SEO e experiÃªncia mobile. O hero usa
+            uma imagem ou ilustraÃ§Ã£o industrial fixa Ã  direita e headline forte Ã  esquerda com
+            dois CTAs. O "movimento" desejado Ã© satisfeito por uma faixa de produtos com scroll
+            horizontal (scroll-snap) abaixo do hero.
+          </div>
+        </div>
+
+        <div class="decision-card">
+          <div class="label">Produtos</div>
+          <div class="title">Variantes informativas, nÃ£o selecionÃ¡veis (nÃ£o Ã© e-commerce)</div>
+          <div class="body">
+            Produtos com mÃºltiplas variaÃ§Ãµes (ex: termÃ´metros com
+            diÃ¢metro/haste/faixa/conexÃ£o) exibem as opÃ§Ãµes disponÃ­veis como tags informativas.
+            O orÃ§amento via WhatsApp captura a variante desejada em linguagem natural: "OlÃ¡, quero
+            orÃ§amento de TermÃ´metro VTS 160mm, 1/2" NPT, faixa 0-300Â°C".
+          </div>
+        </div>
+
+        <div class="decision-card">
+          <div class="label">PDFs</div>
+          <div class="title">
+            Usar sempre arquivos com sufixo "Ok" â€” sÃ£o as versÃµes finais aprovadas
+          </div>
+          <div class="body">
+            O catÃ¡logo em /produtos/ contÃ©m dois arquivos por produto: o original e uma versÃ£o
+            com sufixo " Ok" (revisada/aprovada pelo cliente). O site deve referenciar sempre os
+            arquivos "Ok".
+          </div>
+        </div>
+
+        <div class="decision-card">
+          <div class="label">Identidade</div>
+          <div class="title">
+            Posicionamento como revenda consultiva multi-marca, nÃ£o fabricante
+          </div>
+          <div class="body">
+            A Cas Therm trabalha com mÃºltiplas marcas (VICAL, KESTREL, FLUKE etc.). O tom de
+            comunicaÃ§Ã£o Ã© "te ajudamos a escolher o instrumento certo" â€” nÃ£o "compre direto do
+            fabricante". As marcas dos fabricantes devem ser exibidas com transparÃªncia.
+          </div>
+        </div>
+
+        <div class="decision-card">
+          <div class="label">Grupo</div>
+          <div class="title">Footer menciona o Grupo Cas discretamente com as duas logos</div>
+          <div class="body">
+            A Cas Therm e a Cas Service formam o Grupo Cas. O footer exibe ambas as logos lado a
+            lado com a tagline "Faz parte do Grupo Cas". A Cas Service atua em assistÃªncia tÃ©cnica
+            e calibraÃ§Ã£o â€” empresas complementares, nÃ£o concorrentes.
+          </div>
+        </div>
+
+        <div class="decision-card">
+          <div class="label">Dark Mode</div>
+          <div class="title">darkMode: 'class' com ThemeProvider + script anti-flash</div>
+          <div class="body">
+            Toggle persistido em localStorage com chave 'castherm-theme'. Fallback para
+            prefers-color-scheme. Script inline no head previne flash de tema errado ao recarregar.
+            Fundo dark: #0A1428 (mais escuro que o primary para harmonia visual). Accent (#00B4D8)
+            mantido em ambos os modos com leve aumento de brilho no dark.
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== RODAPÃ‰ ===== -->
+      <section style="border-top: 1px solid #e2e8f0; padding-top: 32px; margin-top: 48px">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+          "
+        >
+          <div>
+            <div style="font-size: 16px; font-weight: 800; color: #0f2a44; letter-spacing: -0.01em">
+              Cas Therm Â· Brand Guide v1.0
+            </div>
+            <div style="font-size: 12px; color: #94a3b8; margin-top: 4px">
+              Documento interno â€” Fase 2.5 do projeto de landing page Â· Maio 2026
+            </div>
+          </div>
+          <div style="font-size: 12px; color: #94a3b8; text-align: right">
+            Desenvolvido com Claude (Anthropic)<br />
+            Projeto: Next.js 14 + Tailwind CSS + TypeScript
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
