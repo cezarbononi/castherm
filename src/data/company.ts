@@ -25,8 +25,8 @@ export const company: CompanyInfo = {
 
   whatsapp: {
     // PLACEHOLDER - substituir pelo número real (formato: 55 + DDD + número, só dígitos)
-    number: '5511985373838',
-    display: '(11) 98537-3838',
+    number: '5511983736777',
+    display: '+55 11 98373-6777',
   },
 
   emails: [
