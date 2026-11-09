@@ -1,4 +1,5 @@
 import { MessageCircle, BookOpen, ChevronDown } from 'lucide-react';
+import Image from 'next/image';
 import { Button, Container } from '@/components/ui';
 import { company } from '@/data/company';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
@@ -10,14 +11,6 @@ export function Hero() {
 
   return (
     <section id="inicio" className="relative overflow-hidden bg-white pt-20 dark:bg-neutral-900">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
-      >
-        <div className="absolute -right-64 -top-32 h-[600px] w-[600px] rounded-full bg-accent/5 blur-3xl dark:bg-accent/10" />
-        <div className="absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-primary/5 blur-3xl dark:bg-primary/20" />
-      </div>
-
       <Container className="flex min-h-[calc(100svh-80px)] items-center">
         <div className="grid w-full grid-cols-1 items-center gap-12 py-8 sm:py-10 lg:grid-cols-2 lg:py-12">
           <div className="flex flex-col gap-6">
@@ -92,63 +85,51 @@ export function Hero() {
           </div>
 
           <div className="flex items-center justify-center lg:justify-end">
-            <div className="relative w-full max-w-md">
-              <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-xl dark:border-neutral-700 dark:bg-neutral-800">
-                <div className="mb-4 flex items-center justify-between">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
-                    Painel de instrumentação
-                  </span>
-                  <span className="flex h-2.5 w-2.5 rounded-full bg-success">
-                    <span className="h-2.5 w-2.5 animate-ping rounded-full bg-success opacity-75" />
-                  </span>
-                </div>
+            <div className="hero-measurement-scene" role="img" aria-label="Composição abstrata de medição industrial com escala e ponteiro animados">
+              <div className="hero-measurement-grid" aria-hidden="true" />
+              <div className="hero-measurement-header">
+                <span><i /> CAS THERM <b>/</b> CONTROLE DE PROCESSOS</span>
+                <span>CT / 2026</span>
+              </div>
 
-                <div className="grid grid-cols-2 gap-3">
-                  <InstrumentCard
-                    label="Velocidade do Ar"
-                    value="12.4"
-                    unit="m/s"
-                    brand="KESTREL"
-                    color="accent"
-                  />
-                  <InstrumentCard
-                    label="Pressão Diferencial"
-                    value="2.8"
-                    unit="mbar"
-                    brand="DWYER"
-                    color="primary"
-                  />
-                  <InstrumentCard
-                    label="Temperatura"
-                    value="127"
-                    unit="°C"
-                    brand="VICAL"
-                    color="primary"
-                  />
-                  <InstrumentCard
-                    label="Ruído Ocup."
-                    value="83"
-                    unit="dB(A)"
-                    brand="HD-800"
-                    color="accent"
-                  />
-                </div>
+              <div className="hero-measurement-orbit hero-measurement-orbit-outer" aria-hidden="true" />
+              <div className="hero-measurement-orbit hero-measurement-orbit-inner" aria-hidden="true" />
 
-                <div className="mt-4 flex items-center justify-between rounded-lg bg-neutral-50 px-3 py-2 dark:bg-neutral-900/60">
-                  <span className="text-xs text-neutral-500 dark:text-neutral-400">
-                    Todos os instrumentos calibrados
-                  </span>
-                  <span className="text-xs font-semibold text-success">OK</span>
+              <div className="hero-measurement-dial" aria-hidden="true">
+                <div className="hero-dial-track" />
+                <div className="hero-dial-active" />
+                <div className="hero-dial-ticks">
+                  {Array.from({ length: 31 }, (_, index) => (
+                    <span
+                      key={index}
+                      className={index % 5 === 0 ? 'hero-dial-tick-major' : undefined}
+                      style={{ transform: `rotate(${-120 + index * 8}deg)` }}
+                    />
+                  ))}
+                </div>
+                <div className="hero-dial-needle" />
+                <div className="hero-dial-hub" />
+                <div className="hero-dial-center-copy">
+                  <Image
+                    src="/images/logo/castherm.png"
+                    alt=""
+                    width={90}
+                    height={64}
+                    className="hero-dial-logo dark:brightness-0 dark:invert"
+                    priority
+                  />
                 </div>
               </div>
 
-              <div className="absolute -right-4 -top-4 rounded-xl border border-neutral-200 bg-white px-4 py-3 shadow-lg dark:border-neutral-700 dark:bg-neutral-800">
-                <p className="text-[10px] font-semibold uppercase tracking-wider text-neutral-400">
-                  Atendimento
-                </p>
-                <p className="mt-0.5 text-sm font-bold text-primary dark:text-neutral-100">
-                  Consultivo B2B
-                </p>
+              <div className="hero-measurement-categories">
+                <span>Pressão</span>
+                <span>Temperatura</span>
+                <span>SST</span>
+              </div>
+
+              <div className="hero-measurement-footer">
+                <span>Instrumentação para cada processo</span>
+                <span><i /> Precisão em movimento</span>
               </div>
             </div>
           </div>
@@ -163,31 +144,3 @@ export function Hero() {
   );
 }
 
-interface InstrumentCardProps {
-  label: string;
-  value: string;
-  unit: string;
-  brand: string;
-  color: 'accent' | 'primary';
-}
-
-function InstrumentCard({ label, value, unit, brand, color }: InstrumentCardProps) {
-  const colorClass = color === 'accent' ? 'text-accent' : 'text-primary dark:text-accent';
-  const bgClass =
-    color === 'accent' ? 'bg-accent/5 dark:bg-accent/10' : 'bg-primary/5 dark:bg-accent/5';
-
-  return (
-    <div className={['rounded-lg p-3', bgClass].join(' ')}>
-      <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
-        {label}
-      </p>
-      <p className={['text-2xl font-extrabold leading-none', colorClass].join(' ')}>
-        {value}
-        <span className="ml-0.5 text-xs font-semibold opacity-70">{unit}</span>
-      </p>
-      <p className="mt-1.5 text-[10px] font-semibold text-neutral-400 dark:text-neutral-500">
-        {brand}
-      </p>
-    </div>
-  );
-}
