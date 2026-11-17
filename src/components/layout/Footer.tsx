@@ -1,4 +1,4 @@
-import { Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { Logo, CasServiceLogo, Container } from '@/components/ui';
 import { company } from '@/data/company';
 import { categories } from '@/data/categories';
@@ -176,7 +176,21 @@ export function Footer() {
               </p>
               <p className="mt-0.5">{company.legalName.split(' —')[0]}</p>
               <p className="mt-0.5">CNPJ: {company.cnpj}</p>
-              <p className="mt-2">Desenvolvido por Cezar Bononi</p>
+              <div className="mt-3 flex flex-col items-center sm:items-start">
+                <span className="text-[9px] font-medium uppercase tracking-[0.16em] text-neutral-500 dark:text-neutral-400">
+                  Design &amp; desenvolvimento
+                </span>
+                <a
+                  href="https://www.avellen.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Avellen, design e desenvolvimento (abre em nova aba)"
+                  className="inline-flex items-center gap-1 text-lg font-semibold leading-tight text-primary transition-colors hover:text-accent dark:text-white dark:hover:text-accent"
+                >
+                  avellen
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </a>
+              </div>
             </div>
 
             {/* Grupo Cas */}
